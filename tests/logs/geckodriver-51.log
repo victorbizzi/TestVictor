@@ -1,0 +1,29 @@
+1659298971854	geckodriver	INFO	Listening on 127.0.0.1:50019
+1659298974946	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50020" "-no-remote" "-profile" "C:\\Users\\VICTOR~1\\AppData\\Local\\Temp\\rust_mozprofileoeEK7G"
+1659298975378	Marionette	INFO	Marionette enabled
+1659298975383	Marionette	INFO	Listening on port 50030
+WebDriver BiDi listening on ws://localhost:50020
+1659298975587	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\VICTOR~1\\AppData\\Local\\Temp\\rust_mozprofileoeEK7G\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50020/devtools/browser/85c96e1e-a3e3-4eca-b97f-bf28a61e2744
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://playground-dev-we.skillsworkflow.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://playground-dev-we.skillsworkflow.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://playground-dev-we.skillsworkflow.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://accounts.google.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://accounts.google.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://accounts.google.com/ServiceLogin?hl=pt-PT&continue=https://www.google.com/search?client%3Dfirefox-b-d%26q%3Dgithub&gae=cb-eomtse line 2 > eval line 7672 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://accounts.google.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://accounts.google.com/ServiceLogin?hl=pt-PT&continue=https://www.google.com/search?client%3Dfirefox-b-d%26q%3Dgithub&gae=cb-eomtse line 2 > eval line 2873 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://accounts.google.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://accounts.google.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://accounts.google.com/ServiceLogin?hl=pt-PT&continue=https%3A%2F%2Fwww.google.com%2Fsearch%3Fclient%3Dfirefox-b-d%26q%3Dgithub&gae=cb-eomtse&flowName=GlifWebSignIn&flowEntry=ServiceLogin line 2 > eval line 6519 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://accounts.google.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript warning: https://accounts.google.com/ServiceLogin?hl=pt-PT&continue=https%3A%2F%2Fwww.google.com%2Fsearch%3Fclient%3Dfirefox-b-d%26q%3Dgithub&gae=cb-eomtse&flowName=GlifWebSignIn&flowEntry=ServiceLogin line 2 > eval line 1484 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.

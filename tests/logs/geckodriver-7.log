@@ -1,0 +1,15 @@
+1659303259969	geckodriver	INFO	Listening on 127.0.0.1:53534
+1659303263011	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53535" "-no-remote" "-profile" "C:\\Users\\VICTOR~1\\AppData\\Local\\Temp\\rust_mozprofile3jP6NO"
+1659303263757	Marionette	INFO	Marionette enabled
+1659303263776	Marionette	INFO	Listening on port 53544
+WebDriver BiDi listening on ws://localhost:53535
+1659303264270	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\VICTOR~1\\AppData\\Local\\Temp\\rust_mozprofile3jP6NO\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53535/devtools/browser/04fb0b70-438f-43f5-8e36-a8041d03204f
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://playground-dev-we.skillsworkflow.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://playground-dev-we.skillsworkflow.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://playground-dev-we.skillsworkflow.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1659303276137	Marionette	INFO	Stopped listening on port 53544
+[Parent 21056, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167

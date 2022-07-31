@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.5 on win32)" generated="20220731 22:34:06.118" rpa="false" schemaversion="2">
+<suite id="s1" name="QAAutomationChallenge" source="c:\TestVictor\tests\QAAutomationChallenge.robot">
+<test id="s1-t1" name="01.01 - TestCase: Login with invalid credentials">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${To_Execute_at_Env}" == "QA"</arg>
+<arg>SeleniumLibrary.Open Browser</arg>
+<arg>${base_urlQA}</arg>
+<arg>ELSE IF</arg>
+<arg>"${To_Execute_at_Env}" == "DEV"</arg>
+<arg>SeleniumLibrary.Open Browser</arg>
+<arg>${base_urlDEV}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_urlQA}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220731 22:34:06.612" level="INFO">Opening browser 'firefox' to base url 'https://playground-dev-we.skillsworkflow.com/login'.</msg>
+<msg timestamp="20220731 22:34:06.614" level="INFO">Firefox driver log is always forced to to: c:\TestVictor\tests\logs\geckodriver-6.log</msg>
+<status status="PASS" starttime="20220731 22:34:06.611" endtime="20220731 22:34:16.661"/>
+</kw>
+<status status="PASS" starttime="20220731 22:34:06.611" endtime="20220731 22:34:16.662"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:34:16.662" endtime="20220731 22:34:17.365"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Web_User}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220731 22:34:17.369" level="INFO">QA Tester</msg>
+<status status="PASS" starttime="20220731 22:34:17.368" endtime="20220731 22:34:17.369"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${LoginPage_InputField_Username}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220731 22:34:17.373" level="INFO">id=email</msg>
+<status status="PASS" starttime="20220731 22:34:17.371" endtime="20220731 22:34:17.373"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Username}</arg>
+<arg>InvalidUser</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 22:34:17.375" level="INFO">Typing text 'InvalidUser' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20220731 22:34:17.375" endtime="20220731 22:34:17.469"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Password}</arg>
+<arg>InvalidPass</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 22:34:17.470" level="INFO">Typing text 'InvalidPass' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220731 22:34:17.469" endtime="20220731 22:34:17.528"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginPage_Button_Login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 22:34:17.529" level="INFO">Clicking element 'id=buttonLoginSkills'.</msg>
+<status status="PASS" starttime="20220731 22:34:17.528" endtime="20220731 22:34:17.776"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LoginPage_LoginErrorNotification}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:34:17.776" endtime="20220731 22:34:18.531"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${LoginPage_LoginErrorNotification}</arg>
+<arg>Incorrect User Name or Password.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220731 22:34:18.533" level="INFO">Verifying element 'xpath=//div[4]/div/div[2]' contains exact text 'Incorrect User Name or Password.'.</msg>
+<status status="PASS" starttime="20220731 22:34:18.532" endtime="20220731 22:34:18.563"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220731 22:34:18.655" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220731 22:34:18.565" endtime="20220731 22:34:18.655"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220731 22:34:18.656" endtime="20220731 22:34:19.928"/>
+</kw>
+<status status="PASS" starttime="20220731 22:34:06.609" endtime="20220731 22:34:19.930"/>
+</test>
+<test id="s1-t2" name="01.02 - TestCase: Login with valid credentials should navigate to homepage">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${To_Execute_at_Env}" == "QA"</arg>
+<arg>SeleniumLibrary.Open Browser</arg>
+<arg>${base_urlQA}</arg>
+<arg>ELSE IF</arg>
+<arg>"${To_Execute_at_Env}" == "DEV"</arg>
+<arg>SeleniumLibrary.Open Browser</arg>
+<arg>${base_urlDEV}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_urlQA}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220731 22:34:19.938" level="INFO">Opening browser 'firefox' to base url 'https://playground-dev-we.skillsworkflow.com/login'.</msg>
+<msg timestamp="20220731 22:34:19.940" level="INFO">Firefox driver log is always forced to to: c:\TestVictor\tests\logs\geckodriver-7.log</msg>
+<status status="PASS" starttime="20220731 22:34:19.937" endtime="20220731 22:34:30.572"/>
+</kw>
+<status status="PASS" starttime="20220731 22:34:19.936" endtime="20220731 22:34:30.572"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:34:30.572" endtime="20220731 22:34:31.592"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Web_User}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220731 22:34:31.593" level="INFO">QA Tester</msg>
+<status status="PASS" starttime="20220731 22:34:31.592" endtime="20220731 22:34:31.593"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${LoginPage_InputField_Username}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220731 22:34:31.594" level="INFO">id=email</msg>
+<status status="PASS" starttime="20220731 22:34:31.593" endtime="20220731 22:34:31.594"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Username}</arg>
+<arg>${Web_User}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 22:34:31.595" level="INFO">Typing text 'QA Tester' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20220731 22:34:31.594" endtime="20220731 22:34:31.670"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Password}</arg>
+<arg>${Web_Pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 22:34:31.672" level="INFO">Typing text '12345' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220731 22:34:31.671" endtime="20220731 22:34:31.710"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginPage_Button_Login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 22:34:31.711" level="INFO">Clicking element 'id=buttonLoginSkills'.</msg>
+<status status="PASS" starttime="20220731 22:34:31.711" endtime="20220731 22:34:31.958"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HomePage_UserLogged}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:34:31.960" endtime="20220731 22:34:33.058"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${HomePage_UserLogged}</arg>
+<arg>QA Tester</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220731 22:34:33.059" level="INFO">Verifying element 'xpath=//li[@id='iconProfile']/a/span' contains exact text 'QA Tester'.</msg>
+<status status="PASS" starttime="20220731 22:34:33.058" endtime="20220731 22:34:33.087"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 22:34:36.089" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220731 22:34:33.089" endtime="20220731 22:34:36.089"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220731 22:34:36.134" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220731 22:34:36.089" endtime="20220731 22:34:36.134"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220731 22:34:36.135" endtime="20220731 22:34:37.286"/>
+</kw>
+<status status="PASS" starttime="20220731 22:34:19.934" endtime="20220731 22:34:37.286"/>
+</test>
+<test id="s1-t3" name="01.03 - TestCase: Login and and test navigation access to Clients list">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${To_Execute_at_Env}" == "QA"</arg>
+<arg>SeleniumLibrary.Open Browser</arg>
+<arg>${base_urlQA}</arg>
+<arg>ELSE IF</arg>
+<arg>"${To_Execute_at_Env}" == "DEV"</arg>
+<arg>SeleniumLibrary.Open Browser</arg>
+<arg>${base_urlDEV}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_urlQA}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220731 22:34:37.289" level="INFO">Opening browser 'firefox' to base url 'https://playground-dev-we.skillsworkflow.com/login'.</msg>
+<msg timestamp="20220731 22:34:37.290" level="INFO">Firefox driver log is always forced to to: c:\TestVictor\tests\logs\geckodriver-8.log</msg>
+<status status="PASS" starttime="20220731 22:34:37.289" endtime="20220731 22:34:44.940"/>
+</kw>
+<status status="PASS" starttime="20220731 22:34:37.288" endtime="20220731 22:34:44.940"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:34:44.940" endtime="20220731 22:34:45.339"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Web_User}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220731 22:34:45.339" level="INFO">QA Tester</msg>
+<status status="PASS" starttime="20220731 22:34:45.339" endtime="20220731 22:34:45.339"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${LoginPage_InputField_Username}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220731 22:34:45.341" level="INFO">id=email</msg>
+<status status="PASS" starttime="20220731 22:34:45.340" endtime="20220731 22:34:45.341"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Username}</arg>
+<arg>${Web_User}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 22:34:45.342" level="INFO">Typing text 'QA Tester' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20220731 22:34:45.341" endtime="20220731 22:34:45.422"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Password}</arg>
+<arg>${Web_Pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 22:34:45.423" level="INFO">Typing text '12345' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220731 22:34:45.422" endtime="20220731 22:34:45.455"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginPage_Button_Login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 22:34:45.456" level="INFO">Clicking element 'id=buttonLoginSkills'.</msg>
+<status status="PASS" starttime="20220731 22:34:45.456" endtime="20220731 22:34:45.690"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HomePage_UserLogged}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:34:45.690" endtime="20220731 22:34:46.789"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${HomePage_UserLogged}</arg>
+<arg>QA Tester</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220731 22:34:46.791" level="INFO">Verifying element 'xpath=//li[@id='iconProfile']/a/span' contains exact text 'QA Tester'.</msg>
+<status status="PASS" starttime="20220731 22:34:46.791" endtime="20220731 22:34:46.871"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Sidebar_Clients}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 22:34:46.872" level="INFO">Clicking element 'css=.menu-icon-no-margin-left'.</msg>
+<status status="PASS" starttime="20220731 22:34:46.872" endtime="20220731 22:34:47.124"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ClientsPage_Clientslabel}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:34:47.125" endtime="20220731 22:34:47.158"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${ClientsPage_Clientslabel}</arg>
+<arg>Clients</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220731 22:34:47.159" level="INFO">Verifying element 'xpath=//header/div/div/div/div[2]/div/div' contains exact text 'Clients'.</msg>
+<status status="PASS" starttime="20220731 22:34:47.159" endtime="20220731 22:34:47.175"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 22:34:51.179" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20220731 22:34:47.175" endtime="20220731 22:34:51.179"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220731 22:34:51.223" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220731 22:34:51.179" endtime="20220731 22:34:51.224"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220731 22:34:51.224" endtime="20220731 22:34:52.443"/>
+</kw>
+<status status="PASS" starttime="20220731 22:34:37.288" endtime="20220731 22:34:52.444"/>
+</test>
+<test id="s1-t4" name="01.04 - TestCase: Login, navigate to Client List and access first available Client">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${To_Execute_at_Env}" == "QA"</arg>
+<arg>SeleniumLibrary.Open Browser</arg>
+<arg>${base_urlQA}</arg>
+<arg>ELSE IF</arg>
+<arg>"${To_Execute_at_Env}" == "DEV"</arg>
+<arg>SeleniumLibrary.Open Browser</arg>
+<arg>${base_urlDEV}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_urlQA}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220731 22:34:52.451" level="INFO">Opening browser 'firefox' to base url 'https://playground-dev-we.skillsworkflow.com/login'.</msg>
+<msg timestamp="20220731 22:34:52.454" level="INFO">Firefox driver log is always forced to to: c:\TestVictor\tests\logs\geckodriver-9.log</msg>
+<status status="PASS" starttime="20220731 22:34:52.450" endtime="20220731 22:34:59.945"/>
+</kw>
+<status status="PASS" starttime="20220731 22:34:52.448" endtime="20220731 22:34:59.945"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:34:59.946" endtime="20220731 22:35:00.307"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Web_User}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220731 22:35:00.307" level="INFO">QA Tester</msg>
+<status status="PASS" starttime="20220731 22:35:00.307" endtime="20220731 22:35:00.307"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${LoginPage_InputField_Username}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220731 22:35:00.308" level="INFO">id=email</msg>
+<status status="PASS" starttime="20220731 22:35:00.308" endtime="20220731 22:35:00.308"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Username}</arg>
+<arg>${Web_User}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 22:35:00.308" level="INFO">Typing text 'QA Tester' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20220731 22:35:00.308" endtime="20220731 22:35:00.370"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Password}</arg>
+<arg>${Web_Pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 22:35:00.370" level="INFO">Typing text '12345' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220731 22:35:00.370" endtime="20220731 22:35:00.417"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginPage_Button_Login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 22:35:00.419" level="INFO">Clicking element 'id=buttonLoginSkills'.</msg>
+<status status="PASS" starttime="20220731 22:35:00.418" endtime="20220731 22:35:00.654"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HomePage_UserLogged}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:35:00.655" endtime="20220731 22:35:01.571"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${HomePage_UserLogged}</arg>
+<arg>QA Tester</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220731 22:35:01.573" level="INFO">Verifying element 'xpath=//li[@id='iconProfile']/a/span' contains exact text 'QA Tester'.</msg>
+<status status="PASS" starttime="20220731 22:35:01.572" endtime="20220731 22:35:01.615"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Sidebar_Clients}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 22:35:01.617" level="INFO">Clicking element 'css=.menu-icon-no-margin-left'.</msg>
+<status status="PASS" starttime="20220731 22:35:01.616" endtime="20220731 22:35:01.887"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ClientsPage_Clientslabel}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:35:01.888" endtime="20220731 22:35:01.915"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${ClientsPage_Clientslabel}</arg>
+<arg>Clients</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220731 22:35:01.916" level="INFO">Verifying element 'xpath=//header/div/div/div/div[2]/div/div' contains exact text 'Clients'.</msg>
+<status status="PASS" starttime="20220731 22:35:01.916" endtime="20220731 22:35:01.928"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220731 22:35:02.940" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220731 22:35:01.928" endtime="20220731 22:35:02.941"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ClientPage_ClientNestle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:35:02.942" endtime="20220731 22:35:02.968"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${ClientPage_ClientNestle}</arg>
+<arg>Nestlé / NEST</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220731 22:35:02.969" level="INFO">Verifying element 'xpath=//td/div/div/div/span' contains exact text 'Nestlé / NEST'.</msg>
+<status status="PASS" starttime="20220731 22:35:02.968" endtime="20220731 22:35:02.981"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220731 22:35:03.045" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220731 22:35:02.983" endtime="20220731 22:35:03.045"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220731 22:35:03.045" endtime="20220731 22:35:04.083"/>
+</kw>
+<status status="PASS" starttime="20220731 22:34:52.447" endtime="20220731 22:35:04.084"/>
+</test>
+<test id="s1-t5" name="01.05 - TestCase: Login and Logout operation">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${To_Execute_at_Env}" == "QA"</arg>
+<arg>SeleniumLibrary.Open Browser</arg>
+<arg>${base_urlQA}</arg>
+<arg>ELSE IF</arg>
+<arg>"${To_Execute_at_Env}" == "DEV"</arg>
+<arg>SeleniumLibrary.Open Browser</arg>
+<arg>${base_urlDEV}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${base_urlQA}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220731 22:35:04.087" level="INFO">Opening browser 'firefox' to base url 'https://playground-dev-we.skillsworkflow.com/login'.</msg>
+<msg timestamp="20220731 22:35:04.088" level="INFO">Firefox driver log is always forced to to: c:\TestVictor\tests\logs\geckodriver-10.log</msg>
+<status status="PASS" starttime="20220731 22:35:04.087" endtime="20220731 22:35:11.372"/>
+</kw>
+<status status="PASS" starttime="20220731 22:35:04.086" endtime="20220731 22:35:11.372"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:35:11.373" endtime="20220731 22:35:11.710"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Web_User}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220731 22:35:11.711" level="INFO">QA Tester</msg>
+<status status="PASS" starttime="20220731 22:35:11.710" endtime="20220731 22:35:11.711"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${LoginPage_InputField_Username}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220731 22:35:11.712" level="INFO">id=email</msg>
+<status status="PASS" starttime="20220731 22:35:11.711" endtime="20220731 22:35:11.712"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Username}</arg>
+<arg>${Web_User}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 22:35:11.713" level="INFO">Typing text 'QA Tester' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20220731 22:35:11.712" endtime="20220731 22:35:11.788"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LoginPage_InputField_Password}</arg>
+<arg>${Web_Pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220731 22:35:11.789" level="INFO">Typing text '12345' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220731 22:35:11.789" endtime="20220731 22:35:11.834"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginPage_Button_Login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 22:35:11.835" level="INFO">Clicking element 'id=buttonLoginSkills'.</msg>
+<status status="PASS" starttime="20220731 22:35:11.835" endtime="20220731 22:35:12.070"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HomePage_UserLogged}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:35:12.071" endtime="20220731 22:35:13.355"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${HomePage_UserLogged}</arg>
+<arg>QA Tester</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220731 22:35:13.356" level="INFO">Verifying element 'xpath=//li[@id='iconProfile']/a/span' contains exact text 'QA Tester'.</msg>
+<status status="PASS" starttime="20220731 22:35:13.356" endtime="20220731 22:35:13.384"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220731 22:35:13.457" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220731 22:35:13.385" endtime="20220731 22:35:13.458"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HomePage_UserLogged}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 22:35:13.459" level="INFO">Clicking element 'xpath=//li[@id='iconProfile']/a/span'.</msg>
+<status status="PASS" starttime="20220731 22:35:13.458" endtime="20220731 22:35:13.734"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HomePage_UserLogged_LogOutbtn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:35:13.735" endtime="20220731 22:35:13.757"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HomePage_UserLogged_LogOutbtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220731 22:35:13.758" level="INFO">Clicking element 'xpath=//li[4]/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20220731 22:35:13.758" endtime="20220731 22:35:13.979"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LoginPage_LoginToYourAccountlabel}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220731 22:35:13.980" endtime="20220731 22:35:14.212"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${LoginPage_LoginToYourAccountlabel}</arg>
+<arg>Login to your account</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220731 22:35:14.213" level="INFO">Verifying element 'xpath=//h3' contains exact text 'Login to your account'.</msg>
+<status status="PASS" starttime="20220731 22:35:14.213" endtime="20220731 22:35:14.224"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220731 22:35:14.267" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220731 22:35:14.224" endtime="20220731 22:35:14.267"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220731 22:35:14.268" endtime="20220731 22:35:15.095"/>
+</kw>
+<status status="PASS" starttime="20220731 22:35:04.085" endtime="20220731 22:35:15.096"/>
+</test>
+<doc>Suite de Testes de Login</doc>
+<status status="PASS" starttime="20220731 22:34:06.120" endtime="20220731 22:35:15.097"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="QAAutomationChallenge">QAAutomationChallenge</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
