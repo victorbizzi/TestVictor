@@ -11,3 +11,4 @@ def AddClient():
             
                 }
             ]
+    return newClient

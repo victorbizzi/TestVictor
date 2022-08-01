@@ -1,6 +1,5 @@
 ***Settings***
 Documentation       API Tests
-Library         data.py
 Library         body.py
 Library         FakerLibrary        
 Library         RequestsLibrary
@@ -17,7 +16,7 @@ Library         DatabaseLibrary
 
 ***Variables***
 ${base_url}                 https://apiv2-playground-dev-we.skillsworkflow.com
-${authToken}            
+${authToken}                UIHuyiGUYTwsgyeBHDGUYYT678HNJKMN7678*njkH&*67jkm
 
 
 
